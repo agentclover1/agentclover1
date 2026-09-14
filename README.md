@@ -6,4 +6,4 @@ I'm currently learning Java and working on software projects.
 * **RenderDragon:** I was the Project Lead and am now an Admin for [renderdragon.org](https://renderdragon.org).
 
 ## Tech
-<img src="https://jsdelivr.net" width="40" height="40" alt="Java" />
+<img src="https://cdn.jsdelivr.net/npm/simple-icons@3.13.0/icons/java.svg" width="40" height="40" alt="Java" />
