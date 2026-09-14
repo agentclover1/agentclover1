@@ -1,6 +1,6 @@
 # AgentClover
 
-I'm currently learning Java and working on software projects. 
+I'm currently learning Java and working on modding projects. 
 
 ## What I do
 * **RenderDragon:** I was the Project Lead and am now an Admin for [renderdragon.org](https://renderdragon.org).
