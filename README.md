@@ -4,6 +4,7 @@ I'm currently learning Java and working on modding projects.
 
 ## What I do
 * **RenderDragon:** I was the Project Lead and am now an Admin for [renderdragon.org](https://renderdragon.org).
+* **Modding:** I'm working on a horror mod right now, inspired by Bloodborne's gothic style, and cat and mouse type horror games.
 
 ## Languages
 <picture>
