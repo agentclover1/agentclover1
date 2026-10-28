@@ -13,7 +13,6 @@
 <img id="head" alt="">
 
 <script>
-// Each resolver takes a username and returns a UUID (or throws).
 const resolvers = [
   async (n) => {
     const r = await fetch("https://api.ashcon.app/mojang/v2/user/" + encodeURIComponent(n));
@@ -33,7 +32,6 @@ const resolvers = [
     return d.id;
   },
   async (n) => {
-    // CORS proxy around Mojang's official API
     const url = "https://api.mojang.com/users/profiles/minecraft/" + encodeURIComponent(n);
     const r = await fetch("https://corsproxy.io/?" + encodeURIComponent(url));
     if (!r.ok) throw new Error("mojang proxy " + r.status);
@@ -63,7 +61,6 @@ async function lookup() {
       errors.push(e.message);
     }
   }
-  // Lookups blocked (e.g. sandboxed preview): try the username directly, images aren't blocked like fetch is.
   img.onerror = () => { status.textContent = "Lookups failed (" + errors.join(" | ") + ") and the render API didn't accept the username directly."; };
   img.src = "https://nmsr.nickac.dev/headiso/" + encodeURIComponent(name);
   status.textContent = "Lookups failed, trying username directly with the render API...";
