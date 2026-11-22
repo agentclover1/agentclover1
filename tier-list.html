@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tier List</title>
+<style>
+  body { margin: 16px; font-family: Arial, Helvetica, sans-serif; background: #fff; color: #111; }
+  #list { border: 1px solid #000; max-width: 900px; }
+  .row { display: flex; min-height: 96px; border-top: 1px solid #000; }
+  .row:first-child { border-top: 0; }
+  .label { width: 96px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 28px; border-right: 1px solid #000; }
+  .items { display: flex; flex-wrap: wrap; gap: 4px; padding: 4px; align-content: flex-start; flex: 1; }
+  .items img { width: 88px; height: 88px; object-fit: cover; display: block; background: #fff; }
+  .S { background: #ff7f7f; }
+  .A { background: #ffbf7f; }
+  .B { background: #ffdf7f; }
+  .C { background: #ffff7f; }
+  .D { background: #bfff7f; }
+  .F { background: #7fffff; }
+</style>
+</head>
+<body>
+
+<div id="list"></div>
+
+<script>
+// ADD NEW ITEMS HERE. One object per item: its tier (S, A, B, C, D or F) and an image URL.
+const ITEMS = [
+  { "tier": "S", "url": "https://picsum.photos/seed/one/200" },
+  { "tier": "A", "url": "https://picsum.photos/seed/two/200" },
+  { "tier": "A", "url": "https://picsum.photos/seed/three/200" },
+  { "tier": "B", "url": "https://picsum.photos/seed/four/200" },
+  { "tier": "C", "url": "https://picsum.photos/seed/five/200" },
+  { "tier": "F", "url": "https://picsum.photos/seed/six/200" }
+];
+
+const TIERS = ["S", "A", "B", "C", "D", "F"];
+const list = document.getElementById("list");
+
+for (const tier of TIERS) {
+  const row = document.createElement("div");
+  row.className = "row " + tier;
+
+  const label = document.createElement("div");
+  label.className = "label";
+  label.textContent = tier;
+
+  const items = document.createElement("div");
+  items.className = "items";
+
+  for (const item of ITEMS) {
+    if (String(item.tier).trim().toUpperCase() !== tier) continue;
+    const img = document.createElement("img");
+    img.src = item.url;
+    img.alt = "";
+    items.appendChild(img);
+  }
+
+  row.append(label, items);
+  list.appendChild(row);
+}
+
+for (const item of ITEMS) {
+  if (!TIERS.includes(String(item.tier).trim().toUpperCase())) {
+    console.warn("Unknown tier, item not shown:", item);
+  }
+}
+</script>
+</body>
+</html>
