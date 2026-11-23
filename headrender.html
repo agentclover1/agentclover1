@@ -1,16 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MC Head Viewer</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@intergrav/dev.css@6">
 </head>
 <body>
-<h1>MC Head Viewer</h1>
+<header>
+  <h1>MC Head Viewer</h1>
+</header>
 
-<input type="text" id="username" placeholder="Minecraft username">
-<button onclick="lookup()">Go</button>
+<main>
+  <input type="text" id="username" placeholder="Minecraft username">
+  <button onclick="lookup()">Go</button>
 
-<p id="status"></p>
-<img id="head" alt="">
+  <p id="status"></p>
+  <img id="head" alt="">
+</main>
 
 <script>
 const resolvers = [
